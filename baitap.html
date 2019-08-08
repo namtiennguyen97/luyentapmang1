@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baitap</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="text" value="">
+<input type="button" onclick="btnAdd()" id="add" value="Add"> <!-- Button Add -->
+<input type="button" id="display" onclick="hienThi()" value="Display"> <!--Button display-->
+<div id="result"></div>
+
+<script>
+    let luuTru = [];
+
+    function btnAdd() {
+        let x = document.getElementById("text").value;
+        luuTru.push(x);
+        document.getElementById("result").innerHTML += "Phần tử hiện tại đã nhập: " + luuTru[luuTru.length - 1] + "<br>";
+    }
+
+    function hienThi() {
+        let i;
+        let a = "<br>";
+        for (i = 0; i < luuTru.length; i++) {
+            a += "Phần tử " + i + "=" + luuTru[i] + "<br>"
+        }
+        document.getElementById("result").innerHTML = a;
+    }
+</script>
+
+</body>
+</html>
